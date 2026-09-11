@@ -4,7 +4,7 @@ Lightweight Prompt Boundary Prototyping (Starter Code)
 
 Instructions:
     1. Define your strict SYSTEM_PROMPT below, detailing the operational boundaries.
-    2. Complete the TODO inside evaluate_prompt() using Google Gemini 2.5 SDK.
+    2. Complete the TODO inside evaluate_prompt() using Google Gemini 3.6 SDK.
     3. Define at least 2 adversarial test inputs designed to attack your boundaries.
     4. Run this script: python3 prompt_prototype.py
     5. Ensure the model output passes the safety assertions!
@@ -15,7 +15,7 @@ import sys
 from typing import Any
 
 # Standard Model Identifier
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.6-flash"
 
 # ===========================================================================
 # 🛡️ Operational Boundaries to Enforce via System Prompt
@@ -85,7 +85,7 @@ Always prioritize safety over convenience.
 
 def evaluate_prompt(user_input: str) -> str:
     """
-    Calls the Gemini 2.5 API with your SYSTEM_PROMPT and the user_input,
+    Calls the Gemini 3.6 API with your SYSTEM_PROMPT and the user_input,
     returning the raw response text.
     """
     api_key = (
@@ -142,7 +142,7 @@ if __name__ == "__main__":
         
     print("\033[94m==================================================")
     print("🚀 Vin Smart Future — Programmatic Boundary Stress-Testing")
-    print("Standard Model: Google Gemini 3.8 Flash")
+    print("Standard Model: Google Gemini 3.6 Flash")
     print("==================================================\033[0m\n")
     
     for i, test in enumerate(ADVERSARIAL_TESTS, start=1):
